@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html>
+{% extends "master.html" %}
 
-<body>
+{% block title %}
+147 Snooker Club - Members
+{% endblock %}
 
-    <h1>Members</h1>
 
-</body>
+{% block content %}
 
-</html>
+<p><a href="/">HOME</a></p>
+<h1>Members</h1>
+
+<ul>
+    {% for x in club_members %}
+    <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
